@@ -15,6 +15,8 @@ A very simple web server that serves static files and integrates with [Java-WebS
 ```java
 InetSocketAddress listenAddress = new InetSocketAddress("0.0.0.0", 80); 
 ServerSocketChannel ssChannel = HttpServer.openServerChannel(listenAddress);
+
+// MyWebSocketListener should implement HttpWebSocketServerListener
 HttpServer server = new HttpServer(ssChannel, new File("/var/www"), new MyWebSocketListener());
 
 // Spawn threads
